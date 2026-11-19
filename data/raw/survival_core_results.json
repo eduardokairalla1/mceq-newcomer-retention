@@ -1,0 +1,67 @@
+{
+  "log_rank_event_vs_organic": {
+    "chi2": 9.832894910609102,
+    "p_value": 0.0017141834824925034
+  },
+  "log_rank_mentorship_vs_non": {
+    "chi2": 11.669497730437211,
+    "p_value": 0.0006353316029423986
+  },
+  "log_rank_oss4sg_vs_conv": {
+    "chi2": 11.783700904896738,
+    "p_value": 0.0005975157533742841
+  },
+  "cox_ph": {
+    "is_event": {
+      "hazard_ratio": 1.076,
+      "hr_95ci_lo": 0.8995,
+      "hr_95ci_hi": 1.2871,
+      "p_value": 0.42303792492862413,
+      "coef": 0.0732
+    },
+    "is_mentorship": {
+      "hazard_ratio": 1.5197,
+      "hr_95ci_lo": 1.2177,
+      "hr_95ci_hi": 1.8966,
+      "p_value": 0.00021330992148651116,
+      "coef": 0.4185
+    },
+    "is_oss4sg": {
+      "hazard_ratio": 0.4471,
+      "hr_95ci_lo": 0.2893,
+      "hr_95ci_hi": 0.691,
+      "p_value": 0.000289697093641832,
+      "coef": -0.8049
+    }
+  },
+  "subgroup_4way": {
+    "Mentorship-OSS4SG": {
+      "n": 50,
+      "achieved_core": 11,
+      "rate_pct": 22.0,
+      "median_months_to_core": 9.5
+    },
+    "Mentorship-ConvOSS": {
+      "n": 450,
+      "achieved_core": 133,
+      "rate_pct": 29.56,
+      "median_months_to_core": 9.1
+    },
+    "Non-Mentorship-OSS4SG": {
+      "n": 30,
+      "achieved_core": 4,
+      "rate_pct": 13.33,
+      "median_months_to_core": 15.9
+    },
+    "Non-Mentorship-ConvOSS": {
+      "n": 758,
+      "achieved_core": 170,
+      "rate_pct": 22.43,
+      "median_months_to_core": 10.2
+    }
+  },
+  "n_event": 1288,
+  "n_organic": 2000,
+  "n_achieved_core": 702,
+  "n_censored": 2586
+}
