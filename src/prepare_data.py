@@ -110,9 +110,53 @@ def build_pairs(profiles: pd.DataFrame) -> pd.DataFrame:
     return pairs.sort_values('pair_id').reset_index(drop=True)
 
 
+def validate_pairs(pairs: pd.DataFrame, profiles: pd.DataFrame) -> None:
+    """
+    Check the pairs against the design and print the result of each check.
+
+    :param pairs: The pairs built by build_pairs.
+    :param profiles: The contributor profiles the pairs came from.
+
+    :raises AssertionError: Listing every check that failed.
+
+    :return: None.
+    """
+    durations = pairs[['duration_event', 'duration_organic']]
+    integer = all(pd.api.types.is_integer_dtype(d) for d in durations.dtypes)
+    counts = pairs['event_type'].value_counts().to_dict()
+    repos = pairs['repo'].nunique()
+
+    # each check, mapped to whether it passed
+    checks = {
+        f'{EXPECTED_PAIRS} pairs (found {len(pairs)})': (
+            len(pairs) == EXPECTED_PAIRS
+        ),
+        'every contributor is in a pair': len(profiles) == 2 * len(pairs),
+        'no duplicated pair ids': not pairs['pair_id'].duplicated().any(),
+        'no missing durations': not durations.isna().any(axis=None),
+        'durations are whole months >= 1': (
+            integer and (durations >= 1).all(axis=None)
+        ),
+        f'{EXPECTED_REPOS} repos (found {repos})': repos == EXPECTED_REPOS,
+        'both members of each pair in the same repo': (
+            pairs['repo'] == pairs['repo_organic']
+        ).all(),
+        'mentorship known for every event': pairs['mentorship'].notna().all(),
+        f'pairs per event: {counts}': counts == EXPECTED_PAIRS_BY_EVENT,
+    }
+
+    # print every check, then fail listing the ones that did not pass
+    status = {True: 'ok', False: 'FAIL'}
+    for check, passed in checks.items():
+        print(f'  [{status[bool(passed)]}] {check}')
+
+    failed = [check for check, passed in checks.items() if not passed]
+    assert not failed, f'Failed checks: {failed}'
+
+
 def main() -> None:
     """
-    Build and save the pairs.
+    Build, validate and save the pairs.
 
     :return: None.
     """
@@ -123,8 +167,10 @@ def main() -> None:
         f'{PROFILES_FILE.relative_to(REPO_ROOT)}'
     )
 
-    # pair the contributors
+    # pair and validate
     pairs = build_pairs(profiles)
+    validate_pairs(pairs, profiles)
+    print('All validations passed.')
 
     # save with fixed line endings, so the output is byte-identical everywhere
     PAIRS_FILE.parent.mkdir(parents=True, exist_ok=True)
