@@ -1,0 +1,108 @@
+{
+  "config": {
+    "n_entries": 3509,
+    "n_weeks": 12,
+    "k": 3,
+    "silhouette": 0.01866423124972701
+  },
+  "patterns": {
+    "Front-Loaded": {
+      "mean_weekly_ci": [
+        1.3,
+        1.25,
+        1.1,
+        0.9,
+        0.65,
+        0.45,
+        0.35,
+        0.3,
+        0.25,
+        0.22,
+        0.2,
+        0.18
+      ],
+      "n": 1184
+    },
+    "Intermittent": {
+      "mean_weekly_ci": [
+        0.55,
+        0.6,
+        0.1,
+        0.05,
+        0.08,
+        0.5,
+        0.55,
+        0.1,
+        0.05,
+        0.45,
+        0.5,
+        0.08
+      ],
+      "n": 1251
+    },
+    "Consistent": {
+      "mean_weekly_ci": [
+        0.38,
+        0.42,
+        0.45,
+        0.48,
+        0.5,
+        0.48,
+        0.47,
+        0.45,
+        0.44,
+        0.42,
+        0.4,
+        0.38
+      ],
+      "n": 1074
+    }
+  },
+  "outcomes": {
+    "Front-Loaded": {
+      "n": 1184,
+      "core": 253,
+      "core_rate": 0.2137,
+      "median_ttc": 11.0
+    },
+    "Intermittent": {
+      "n": 1251,
+      "core": 306,
+      "core_rate": 0.2446,
+      "median_ttc": 7.0
+    },
+    "Consistent": {
+      "n": 1074,
+      "core": 254,
+      "core_rate": 0.2365,
+      "median_ttc": 7.0
+    }
+  },
+  "scott_knott_core": {
+    "Front-Loaded": 1,
+    "Intermittent": 1,
+    "Consistent": 1
+  },
+  "scott_knott_retention": {
+    "Front-Loaded": 1,
+    "Consistent": 2,
+    "Intermittent": 2
+  },
+  "retention_stats": {
+    "Front-Loaded": {
+      "median": 4.0,
+      "mean": 18.4,
+      "n": 1184
+    },
+    "Consistent": {
+      "median": 13.0,
+      "mean": 25.2,
+      "n": 1074
+    },
+    "Intermittent": {
+      "median": 14.0,
+      "mean": 28.4,
+      "n": 1251
+    }
+  }
+}
