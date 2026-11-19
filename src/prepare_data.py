@@ -48,6 +48,7 @@ PAIR_COLUMNS = [
     'duration_event',
     'duration_organic',
     'D',
+    'self_matched',
 ]
 
 
@@ -72,6 +73,7 @@ def load_profiles(path: Path) -> pd.DataFrame:
                 'contributor_type': record['contributor_type'],
                 'event_type': record['event_type'],
                 'repo': record['repo'],
+                'username': record['username'],
                 'duration': record['raw_dims'][DURATION_INDEX],
             }
             for record in records
@@ -95,8 +97,9 @@ def build_pairs(profiles: pd.DataFrame) -> pd.DataFrame:
     organics = profiles[profiles['contributor_type'] == 'organic']
 
     # join both members; an unmatched member is kept, with a missing duration
-    pairs = events[['pair_id', 'repo', 'event_type', 'duration']].merge(
-        organics[['pair_id', 'repo', 'duration']],
+    columns = ['pair_id', 'repo', 'username', 'duration']
+    pairs = events[[*columns, 'event_type']].merge(
+        organics[columns],
         on='pair_id',
         how='outer',
         suffixes=('_event', '_organic'),
@@ -105,6 +108,13 @@ def build_pairs(profiles: pd.DataFrame) -> pd.DataFrame:
     # derive the mentorship flag and the paired difference
     pairs['mentorship'] = pairs['event_type'].map(MENTORSHIP_BY_EVENT)
     pairs['D'] = pairs['duration_event'] - pairs['duration_organic']
+
+    # both members are the same github account (protocol amendment 1)
+    usernames = pairs[['username_event', 'username_organic']]
+    usernames = usernames.apply(lambda column: column.str.lower())
+    pairs['self_matched'] = (
+        usernames['username_event'] == usernames['username_organic']
+    )
     pairs = pairs.rename(columns={'repo_event': 'repo'})
 
     return pairs.sort_values('pair_id').reset_index(drop=True)
@@ -171,6 +181,13 @@ def main() -> None:
     pairs = build_pairs(profiles)
     validate_pairs(pairs, profiles)
     print('All validations passed.')
+
+    # self-matched pairs are left out of the primary analysis
+    self_matched = int(pairs['self_matched'].sum())
+    print(
+        f'Self-matched pairs: {self_matched} '
+        f'(primary analysis keeps {len(pairs) - self_matched})'
+    )
 
     # save with fixed line endings, so the output is byte-identical everywhere
     PAIRS_FILE.parent.mkdir(parents=True, exist_ok=True)

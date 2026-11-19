@@ -51,3 +51,18 @@ The original Hypothesis Sheet studied *API documentation format × onboarding ti
 - **Construct validity:** activity duration does not distinguish continuous from sparse activity (two contributions years apart count the same as steady activity); it also depends on the data collection date (right-censoring for recent newcomers).
 - **External validity:** only GitHub projects that participate in these events are included; results may not generalize to other projects or platforms.
 
+## Amendments
+
+### Amendment 1 — 2026-11-18, before any confirmatory analysis was run
+
+**Finding.** While checking the data, we found 65 pairs in which the organic member is the same GitHub account as the event member (same `username` in `activity_profiles.json`, compared case-insensitively). In 54 of them, the organic member's commit email in `organic_contributors.csv` is the event member's GitHub no-reply address, which confirms it. These pairs compare a contributor with themselves (47 of the 65 have D = 0) and are not valid event-vs-organic comparisons. The most likely cause is that the original study identified event contributors by GitHub username and organic contributors by commit email, without merging the two identities.
+
+Pairs by event type: hacktoberfest 31, gsoc 13, lfx 12, 24pr 9.
+
+**Changes.**
+
+1. **Primary analysis:** run on the pairs that are not self-matched (n = 1936). Sections 2–4 apply unchanged.
+2. **Sensitivity analysis:** the same procedure (Sections 3–4: normality check, test choice, effect size, bootstrap CI) run on all 2001 pairs, to show whether the exclusion changes the conclusion.
+3. **Exploratory analysis (Section 5):** run on the primary set.
+
+Self-matched pairs are flagged in `data/processed/pairs.csv` (column `self_matched`) by `src/prepare_data.py`; no raw data is changed.
