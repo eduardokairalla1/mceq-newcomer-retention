@@ -46,6 +46,7 @@ The original Hypothesis Sheet studied *API documentation format × onboarding ti
 ## 7. Initial threats to validity
 
 - **Conclusion validity:** with a large n, even negligible differences may be statistically significant; interpretation will focus on the effect size and its CI.
+- **Conclusion validity (independence):** the unit is a contributor *in a project*, so the same person can appear in several pairs (2001 event entries come from 1548 distinct people). Pairs are therefore not fully independent, which the paired tests assume.
 - **Internal validity:** self-selection — newcomers choose whether to join through an event, so groups may differ in unobserved ways (motivation, experience) beyond the entry mechanism.
 - **Construct validity:** activity duration does not distinguish continuous from sparse activity (two contributions years apart count the same as steady activity); it also depends on the data collection date (right-censoring for recent newcomers).
 - **External validity:** only GitHub projects that participate in these events are included; results may not generalize to other projects or platforms.
