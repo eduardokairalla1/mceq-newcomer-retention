@@ -43,5 +43,40 @@
       "n_resamples": 10000,
       "seed": 2026
     }
+  },
+  "sensitivity": {
+    "normality": {
+      "W": 0.8907372301797369,
+      "p": 1.7817396102985004e-35,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 2001,
+      "mean": -0.2683658170914543,
+      "median": 0.0,
+      "sd": 36.98554371343094,
+      "D > 0": 886,
+      "D < 0": 840,
+      "D = 0": 275
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 730576.0,
+      "n_nonzero": 1726,
+      "zero_method": "wilcox",
+      "p": 0.4800084446953835,
+      "decision": "do not reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": 0.019624919736366254,
+      "ci_95_low": -0.034745382034908415,
+      "ci_95_high": 0.07315456200564811,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
   }
 }
