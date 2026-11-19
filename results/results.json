@@ -78,5 +78,75 @@
       "n_resamples": 10000,
       "seed": 2026
     }
+  },
+  "exploratory_mentorship": {
+    "normality": {
+      "W": 0.8275274095719392,
+      "p": 8.496208584696728e-30,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 884,
+      "mean": -0.06447963800904978,
+      "median": 0.0,
+      "sd": 25.979417863061304,
+      "D > 0": 434,
+      "D < 0": 341,
+      "D = 0": 109
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 133014.0,
+      "n_nonzero": 775,
+      "zero_method": "wilcox",
+      "p": 0.00540878672045923,
+      "decision": "reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": 0.11530428999002328,
+      "ci_95_low": 0.032894991040918906,
+      "ci_95_high": 0.19701769732423385,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
+  },
+  "exploratory_no_mentorship": {
+    "normality": {
+      "W": 0.9449656893164959,
+      "p": 2.4038567933471006e-19,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 1052,
+      "mean": -0.058935361216730035,
+      "median": 0.0,
+      "sd": 44.77288438363192,
+      "D > 0": 450,
+      "D < 0": 483,
+      "D = 0": 119
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 214669.5,
+      "n_nonzero": 933,
+      "zero_method": "wilcox",
+      "p": 0.6987669382484811,
+      "decision": "do not reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": -0.014624372577235829,
+      "ci_95_low": -0.08709690043217073,
+      "ci_95_high": 0.0599342029758797,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
   }
 }
