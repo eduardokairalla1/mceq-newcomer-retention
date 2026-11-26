@@ -1,0 +1,33 @@
+{
+  "log_rank_event_vs_organic": {
+    "chi2": 17.006099938072218,
+    "p_value": 3.725992179896036e-05
+  },
+  "cox_ph": {
+    "is_event": {
+      "hazard_ratio": 0.6179,
+      "hr_95ci_lo": 0.5594,
+      "hr_95ci_hi": 0.6826,
+      "p_value": 2.5116292199049196e-21,
+      "coef": -0.4814
+    },
+    "is_mentorship": {
+      "hazard_ratio": 1.6319,
+      "hr_95ci_lo": 1.426,
+      "hr_95ci_hi": 1.8675,
+      "p_value": 1.089708899508559e-12,
+      "coef": 0.4897
+    },
+    "is_oss4sg": {
+      "hazard_ratio": 1.4668,
+      "hr_95ci_lo": 1.2479,
+      "hr_95ci_hi": 1.7241,
+      "p_value": 3.3808571642982735e-06,
+      "coef": 0.3831
+    }
+  },
+  "n_event": 1288,
+  "n_organic": 2000,
+  "n_left": 2877,
+  "n_censored": 411
+}

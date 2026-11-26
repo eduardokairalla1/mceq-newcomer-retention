@@ -1,0 +1,152 @@
+{
+  "parameters": {
+    "alpha": 0.05,
+    "n_resamples": 10000,
+    "seed": 2026,
+    "zero_method": "wilcox",
+    "wilcoxon_method": "auto (normal approximation at these sample sizes)",
+    "ci_level": 0.95,
+    "scipy_version": "1.18.1",
+    "numpy_version": "2.5.5"
+  },
+  "primary": {
+    "normality": {
+      "W": 0.8970499998982118,
+      "p": 3.5478907044762787e-34,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 1936,
+      "mean": -0.061466942148760334,
+      "median": 0.0,
+      "sd": 37.37379925864192,
+      "D > 0": 884,
+      "D < 0": 824,
+      "D = 0": 228
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 709646.0,
+      "n_nonzero": 1708,
+      "zero_method": "wilcox",
+      "p": 0.32415220824854984,
+      "decision": "do not reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": 0.027539832516379054,
+      "ci_95_low": -0.02814411798772468,
+      "ci_95_high": 0.08256335130153285,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
+  },
+  "sensitivity": {
+    "normality": {
+      "W": 0.8907372301797369,
+      "p": 1.7817396102985004e-35,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 2001,
+      "mean": -0.2683658170914543,
+      "median": 0.0,
+      "sd": 36.98554371343094,
+      "D > 0": 886,
+      "D < 0": 840,
+      "D = 0": 275
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 730576.0,
+      "n_nonzero": 1726,
+      "zero_method": "wilcox",
+      "p": 0.4800084446953835,
+      "decision": "do not reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": 0.019624919736366254,
+      "ci_95_low": -0.034745382034908415,
+      "ci_95_high": 0.07315456200564811,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
+  },
+  "exploratory_mentorship": {
+    "normality": {
+      "W": 0.8275274095719392,
+      "p": 8.496208584696728e-30,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 884,
+      "mean": -0.06447963800904978,
+      "median": 0.0,
+      "sd": 25.979417863061304,
+      "D > 0": 434,
+      "D < 0": 341,
+      "D = 0": 109
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 133014.0,
+      "n_nonzero": 775,
+      "zero_method": "wilcox",
+      "p": 0.00540878672045923,
+      "decision": "reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": 0.11530428999002328,
+      "ci_95_low": 0.032894991040918906,
+      "ci_95_high": 0.19701769732423385,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
+  },
+  "exploratory_no_mentorship": {
+    "normality": {
+      "W": 0.9449656893164959,
+      "p": 2.4038567933471006e-19,
+      "normality_rejected": true,
+      "main_test": "Wilcoxon signed-rank"
+    },
+    "d_summary": {
+      "n": 1052,
+      "mean": -0.058935361216730035,
+      "median": 0.0,
+      "sd": 44.77288438363192,
+      "D > 0": 450,
+      "D < 0": 483,
+      "D = 0": 119
+    },
+    "main_test": {
+      "name": "Wilcoxon signed-rank",
+      "statistic_name": "T",
+      "statistic": 214669.5,
+      "n_nonzero": 933,
+      "zero_method": "wilcox",
+      "p": 0.6987669382484811,
+      "decision": "do not reject H0"
+    },
+    "effect_size": {
+      "name": "rank-biserial r",
+      "value": -0.014624372577235829,
+      "ci_95_low": -0.08709690043217073,
+      "ci_95_high": 0.0599342029758797,
+      "ci_method": "percentile bootstrap, resampling pairs",
+      "n_resamples": 10000,
+      "seed": 2026
+    }
+  }
+}

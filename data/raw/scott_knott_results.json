@@ -1,0 +1,116 @@
+{
+  "time_to_core": {
+    "description": "Scott-Knott ESD ranking by months to core achievement",
+    "rationale": "Parallels EASE 2026 Figure 5: ranking temporal patterns by time-to-core effectiveness",
+    "groups": {
+      "Mentorship": {
+        "n": 246,
+        "median": 1.0,
+        "mean": 3.8,
+        "rank": 1
+      },
+      "Non-Mentorship": {
+        "n": 383,
+        "median": 1.0,
+        "mean": 8.6,
+        "rank": 2
+      },
+      "Organic": {
+        "n": 947,
+        "median": 0.0,
+        "mean": 4.1,
+        "rank": 1
+      }
+    },
+    "note": "Rank 1 = fastest. Same rank = no significant difference with at least small effect size."
+  },
+  "core_rate_by_event_type": {
+    "description": "Scott-Knott ESD ranking of event types + organic by core rate",
+    "rationale": "Identifies which entry pathways are statistically distinct in core achievement",
+    "groups": {
+      "GSoC": {
+        "n": 739,
+        "rate_pct": 27.6,
+        "rank": 1
+      },
+      "LFX": {
+        "n": 170,
+        "rate_pct": 38.2,
+        "rank": 2
+      },
+      "24PR": {
+        "n": 576,
+        "rate_pct": 25.0,
+        "rank": 1
+      },
+      "Hacktoberfest": {
+        "n": 516,
+        "rate_pct": 53.1,
+        "rank": 2
+      },
+      "Organic": {
+        "n": 2001,
+        "rate_pct": 48.5,
+        "rank": 2
+      }
+    },
+    "note": "Rank 1 = lowest core rate. Higher rank = higher rate."
+  },
+  "core_rate_3groups": {
+    "description": "Scott-Knott ESD ranking of 3 groups by core rate",
+    "rationale": "Parallels ICSE 2026 Figure 2: ranking groups by outcome variable",
+    "groups": {
+      "Mentorship": {
+        "n": 909,
+        "rate_pct": 29.6,
+        "rank": 1
+      },
+      "Non-Mentorship": {
+        "n": 1092,
+        "rate_pct": 38.3,
+        "rank": 1
+      },
+      "Organic": {
+        "n": 2001,
+        "rate_pct": 48.5,
+        "rank": 1
+      }
+    },
+    "key_finding": "All 3 groups receive the same rank because pairwise Cliff's delta values are below the small-effect threshold (0.147), indicating the differences, while statistically significant due to large N, are not practically meaningful."
+  },
+  "time_to_core_stratified": {
+    "description": "Scott-Knott ESD ranking by group x project type on time-to-core",
+    "groups": {
+      "Mentorship OSS4SG": {
+        "n": 32,
+        "median": 0.0,
+        "rank": 1
+      },
+      "Mentorship ConvOSS": {
+        "n": 214,
+        "median": 1.0,
+        "rank": 1
+      },
+      "Non-Mentorship OSS4SG": {
+        "n": 21,
+        "median": 1.0,
+        "rank": 1
+      },
+      "Non-Mentorship ConvOSS": {
+        "n": 362,
+        "median": 1.0,
+        "rank": 2
+      },
+      "Organic OSS4SG": {
+        "n": 59,
+        "median": 0.0,
+        "rank": 1
+      },
+      "Organic ConvOSS": {
+        "n": 888,
+        "median": 0.0,
+        "rank": 1
+      }
+    }
+  }
+}
